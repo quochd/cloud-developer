@@ -51,10 +51,14 @@ export class Todos extends React.PureComponent<TodosProps, TodosState> {
         name: this.state.newTodoName,
         dueDate
       })
-      this.setState({
-        todos: [...this.state.todos, newTodo],
+      console.log("Before newTodo: "+newTodo)
+
+       this.setState({
+        todos: [...this.state.todos, newTodo], 
         newTodoName: ''
       })
+
+      console.log("After newTodo: "+newTodo.name)
     } catch {
       alert('Todo creation failed')
     }
@@ -85,7 +89,7 @@ export class Todos extends React.PureComponent<TodosProps, TodosState> {
         })
       })
     } catch {
-      alert('Todo deletion failed')
+      alert('Todo check failed')
     }
   }
 
